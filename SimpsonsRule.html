@@ -108,18 +108,19 @@ def simpsons (func = input_box( default = x*sin(x/2), label = "f(x) = ", width =
         # Combine plots and show
         graph.show()
         
-        print "Simpson's Rule approximates the area as " + str(approx.n()) + "."
+        text1 = "Simpson's Rule approximates the area as " + str(approx.n()) + "."
         (area, prec) = numerical_integral( f, lower, upper )
         l = 0
         while prec <= 10^-l:
             l += 1
             
-        print "The actual area is " + str(area) + ", accurate to " + str(l) + " digits."
+        text1 += "The actual area is " + str(area) + ", accurate to " + str(l) + " digits."
+        pretty_print( text1 )
 
 </script>
 </div>
 
 <hr>
-Last modified on July 18th, 2017.
+Last modified on July 24th, 2017.
 </body>
 </html>
