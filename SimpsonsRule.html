@@ -62,7 +62,8 @@ def simpsons (func = input_box( default = x*sin(x/2), label = "f(x) = ", width =
     
     # Check that n is even, otherwise cannot compute
     if not n%2 == 0:
-        print "n must be even to run Simpson's rule."
+        pretty_print( "n must be even to run Simpson's rule." )
+        exit()
         
     else:
         # Set up function and width, graph f
@@ -114,13 +115,13 @@ def simpsons (func = input_box( default = x*sin(x/2), label = "f(x) = ", width =
         while prec <= 10^-l:
             l += 1
             
-        text1 += "The actual area is " + str(area) + ", accurate to " + str(l) + " digits."
+        text1 += "\nThe actual area is " + str(area) + ", accurate to " + str(l) + " digits."
         pretty_print( text1 )
 
 </script>
 </div>
 
 <hr>
-Last modified on July 24th, 2017.
+Last modified on July 25th, 2017.
 </body>
 </html>
