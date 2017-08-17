@@ -51,14 +51,14 @@ $(function () {
 # INTENSE VISUAL TIME
 
 @interact( layout =[ ['func', 'n', 'lower', 'upper'], ['x_min', 'x_max', 'y_min', 'y_max'] ])
-def simpsons (func = input_box( default = x*sin(x/2), label = "f(x) = ", width = 20 ), 
-        n = input_box( default = 4, label = "n", width = 5 ), 
-        lower = input_box( default = 1, label = "a", width = 5 ), 
-        upper = input_box( default = 5, label = "b", width = 5 ), 
-        x_min = input_box( default = 0, label = "x min", width = 5 ), 
-        x_max = input_box( default = 6, label = "x max", width = 5 ),
-        y_min = input_box( default = -2, label = "y min", width = 5 ),
-        y_max = input_box( default = 6, label = "y max", width = 5 ) ):
+def simpsons (func = input_box( default = x*sin(x/2), label = "$f(x) = $", width = 20 ), 
+        n = input_box( default = 4, label = "$n$", width = 5 ), 
+        lower = input_box( default = 1, label = "$a$", width = 5 ), 
+        upper = input_box( default = 5, label = "$b$", width = 5 ), 
+        x_min = input_box( default = 0, label = "$x_{min}$", width = 5 ), 
+        x_max = input_box( default = 6, label = "$x_{max}$", width = 5 ),
+        y_min = input_box( default = -2, label = "$y_{min}$", width = 5 ),
+        y_max = input_box( default = 6, label = "$y_{max}$", width = 5 ) ):
     
     # Check that n is even, otherwise cannot compute
     if not n%2 == 0:
@@ -109,7 +109,7 @@ def simpsons (func = input_box( default = x*sin(x/2), label = "f(x) = ", width =
         # Combine plots and show
         graph.show()
         
-        text1 = "Simpson's Rule approximates the area as " + str(approx.n()) + "."
+        text1 = "Simpson's Rule approximates the area as %6.7f." %approx.n() 
         (area, prec) = numerical_integral( f, lower, upper )
         l = 0
         while prec <= 10^-l:
@@ -122,6 +122,6 @@ def simpsons (func = input_box( default = x*sin(x/2), label = "f(x) = ", width =
 </div>
 
 <hr>
-Last modified on July 25th, 2017.
+Last modified on August 17th, 2017.
 </body>
 </html>
